@@ -1,21 +1,20 @@
-FROM node:15 as builder
+# Use Node 15 base image
+FROM node:15-alpine
 
-WORKDIR
+# Set working directory
+WORKDIR /app
 
-COPY
+# Copy package files
+COPY package*.json ./
 
-RUN 
+# Install dependencies
+RUN npm install
 
-COPY
+# Copy rest of the code
+COPY . .
 
-RUN 
+# Expose application port
+EXPOSE 8080
 
-FROM
-
-WORKDIR
-
-COPY
-
-RUN 
-
-ENTRYPOINT 
+# Start the application
+CMD ["npm", "start"]
